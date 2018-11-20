@@ -24,14 +24,14 @@ A few simple but efficient test suites for determining the maximum throughput an
 - All limits are set to 999999, which in our current use case means "No throttling at all".
 - The deployment is using the docker setup proposed by the OpenWhisk development team: `overlay` driver and HTTP API enabled via a UNIX port.
 
-The load is driven by the blazingly fast [`wrk`](https://github.com/wg/wrk).
-
 #### Travis Machine Setup
 The [machine provided by Travis](https://docs.travis-ci.com/user/ci-environment/#Virtualization-environments) has ~2 CPU cores (likely shared through virtualization) and 7.5GB memory.
 
 ## Suites
 
 ### wrk
+
+In these tests, the load is driven by the blazingly fast [`wrk`](https://github.com/wg/wrk).
 
 #### Latency Test
 Determines the end-to-end latency a user experience when doing a blocking invocation. The action used is a no-op so the numbers returned are the plain overhead of the OpenWhisk system. The requests are directly against the controller.
